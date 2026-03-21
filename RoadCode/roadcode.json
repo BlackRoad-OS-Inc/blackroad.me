@@ -1,0 +1,25 @@
+{
+  "name": "blackroad.me",
+  "org": "BlackRoad-OS-Inc",
+  "category": "identity",
+  "title": "BlackRoad Me",
+  "deploy": {
+    "target": "gematria",
+    "path": "/var/www/blackroad/blackroad.me",
+    "ssl": "auto",
+    "cdn": true
+  },
+  "mirrors": {
+    "gitea": "https://git.blackroad.io/BlackRoad-OS-Inc/blackroad.me",
+    "github": "https://github.com/BlackRoad-OS-Inc/blackroad.me"
+  },
+  "ci": {
+    "on_push": ["build", "deploy"],
+    "on_pr": ["lint", "audit"]
+  },
+  "monitoring": {
+    "uptime": true,
+    "analytics": "roadanalytics",
+    "alerts": "nats"
+  }
+}
