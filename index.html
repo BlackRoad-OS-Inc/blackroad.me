@@ -3,59 +3,201 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
 <title>BlackRoad Identity</title>
-<meta name="description" content="Your sovereign digital identity.">
+<meta name="description" content="BlackRoad Identity — Your sovereign profile.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<meta property="og:title" content="BlackRoad Identity"><meta property="og:description" content="Your sovereign digital identity."><meta property="og:url" content="https://blackroad.me"><meta property="og:image" content="https://images.blackroad.io/brand/blackroad-og.png">
+<meta property="og:title" content="BlackRoad Identity"><meta property="og:url" content="https://blackroad.me"><meta property="og:image" content="https://images.blackroad.io/brand/blackroad-og.png">
 <link rel="canonical" href="https://blackroad.me">
-<style>*{margin:0;padding:0;box-sizing:border-box}
+<link rel="icon" type="image/png" href="https://images.blackroad.io/brand/favicon.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
-:root{--g:linear-gradient(90deg,#FF6B2B,#FF2255,#CC00AA,#8844FF,#4488FF,#00D4FF);--g135:linear-gradient(135deg,#FF6B2B,#FF2255,#CC00AA,#8844FF,#4488FF,#00D4FF);--bg:#000;--white:#fff;--black:#000;--border:#1a1a1a;--muted:#444;--sub:#737373;--sg:'Space Grotesk',sans-serif;--jb:'JetBrains Mono',monospace}
-body{background:var(--bg);color:var(--white);font-family:var(--sg);overflow-x:hidden}
+:root{--g:linear-gradient(90deg,#FF6B2B,#FF2255,#CC00AA,#8844FF,#4488FF,#00D4FF);--g135:linear-gradient(135deg,#FF6B2B,#FF2255,#CC00AA,#8844FF,#4488FF,#00D4FF);--bg:#000;--border:#1a1a1a;--sub:#999;--dim:#333;--sg:'Space Grotesk',sans-serif;--jb:'JetBrains Mono',monospace}
+body{background:var(--bg);color:#f5f5f5;font-family:var(--sg);overflow-x:hidden;padding-bottom:48px}
 .grad-bar{height:4px;background:var(--g)}
-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--border)}
-.nav-logo{font-weight:700;font-size:20px;color:var(--white);display:flex;align-items:center;gap:10px}
-.nav-mark{width:28px;height:4px;border-radius:2px;background:var(--g)}
-.nav-links{display:flex;gap:24px}
-.nav-links a{font-size:13px;font-weight:500;color:var(--white);opacity:.4;text-decoration:none;transition:opacity .15s}
-.nav-links a:hover{opacity:.8}
-.container{max-width:900px;margin:0 auto;padding:32px 24px}
-h1{font-size:32px;font-weight:700;margin-bottom:8px}
-.sub{font-size:14px;color:var(--sub);margin-bottom:32px}
-.card{border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px;background:#0a0a0a;transition:border-color .2s}
-.card:hover{border-color:#333}
-.card h3{font-size:16px;font-weight:600;margin-bottom:8px}
-.card p{font-size:13px;color:var(--sub);line-height:1.6}
-.input{width:100%;padding:12px 14px;background:#111;border:1px solid var(--border);border-radius:6px;color:#f5f5f5;font-size:14px;font-family:var(--sg);outline:none}
-.input:focus{border-color:#333}
-.btn{padding:10px 24px;border:none;border-radius:6px;background:#f5f5f5;color:#000;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sg)}
-.btn-outline{background:transparent;color:#f5f5f5;border:1px solid var(--border)}
-.stat{text-align:center;padding:16px}
-.stat-val{font-size:28px;font-weight:700}
-.stat-label{font-family:var(--jb);font-size:10px;color:var(--sub);letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px}
-.mono{font-family:var(--jb);font-size:12px}
-.label{font-family:var(--jb);font-size:10px;color:var(--sub);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
-.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px}
-.dot-up{background:var(--g135)}
-.dot-down{background:none;border:1px solid var(--white);opacity:.3}
-canvas{border:1px solid var(--border);border-radius:10px;background:#0a0a0a}
-footer{border-top:1px solid var(--border);padding:24px 48px;text-align:center;font-size:12px;color:var(--sub)}
-footer a{color:var(--white);opacity:.5;text-decoration:none}
-.grad-bar-bottom{height:4px;background:var(--g)}
-pre{background:#0a0a0a;border:1px solid var(--border);border-radius:8px;padding:16px;font-family:var(--jb);font-size:12px;color:#888;overflow-x:auto;line-height:1.6}
-@media(max-width:768px){nav{padding:14px 20px}.container{padding:24px 16px}.grid-4,.grid-3{grid-template-columns:repeat(2,1fr)}.grid-2{grid-template-columns:1fr}h1{font-size:24px}}</style>
+.container{max-width:100%;margin:0 auto;padding:32px 16px 0}
+.section{margin-bottom:40px}
+.section-label{font-family:var(--jb);font-size:10px;font-weight:500;color:var(--sub);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+.title{font-size:24px;font-weight:700;color:#fff;margin-bottom:4px}
+.subtitle{font-size:13px;color:#aaa;margin-bottom:32px}
+.mark{width:24px;height:3px;border-radius:2px;background:var(--g);margin-bottom:16px}
+.card{border:1px solid var(--border);border-radius:10px;padding:16px;background:#0a0a0a;transition:border-color .2s,transform .15s;margin-bottom:10px;cursor:pointer}
+.card:hover{border-color:var(--dim)}.card:active{transform:scale(.985)}
+.card.no-click{cursor:default}.card.no-click:active{transform:none}
+.card-detail{display:none;margin-top:14px;padding-top:14px;border-top:1px solid var(--border);font-size:12px;color:#aaa;line-height:1.7}
+.card.open .card-detail{display:block}
+.card-arrow{float:right;font-size:14px;color:#555;transition:transform .2s}
+.card.open .card-arrow{transform:rotate(90deg)}
+.grid-2,.grid-3,.grid-4{display:grid;gap:10px;margin-bottom:16px}
+.grid-2{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.grid-4{grid-template-columns:repeat(2,1fr)}
+.stat-val{font-size:22px;font-weight:700;color:#fff}
+.stat-label{font-family:var(--jb);font-size:9px;color:#aaa;letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+.dot{width:6px;height:6px;border-radius:50%;display:inline-block;margin-right:6px}.dot-live{background:var(--g135)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}.pulse{animation:pulse 2s infinite}
+.circle-accent{width:8px;height:8px;border-radius:50%;background:var(--g135);display:inline-block}
+.profile-avatar{width:48px;height:48px;border-radius:50%;background:var(--g135);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff;margin-bottom:14px}
+.row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+.row:last-child{border-bottom:none}
+.row-key{color:#aaa}
+.row-val{color:#ddd;text-align:right;font-family:var(--jb);font-size:11px}
+.device-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s}
+.device-row:last-child{border-bottom:none}.device-row:active{background:#111}
+.device-name{font-size:13px;font-weight:500;color:#ddd;min-width:80px}
+.device-role{font-size:11px;color:#888;flex:1}
+.device-detail{display:none;padding:8px 0 6px 22px;font-size:11px;color:#999;line-height:1.8;border-bottom:1px solid var(--border)}
+.domain-grid{display:grid;grid-template-columns:1fr;gap:6px}
+.domain-item{font-size:11px;color:#bbb;padding:8px 12px;border:1px solid var(--border);border-radius:6px;text-decoration:none;display:flex;align-items:center;gap:6px;transition:border-color .2s}
+.domain-item:hover{border-color:var(--dim);color:#eee}
+.domain-dot{width:4px;height:4px;border-radius:50%;background:var(--g135);flex-shrink:0}
+/* widget */
+.widget-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
+.widget{border:1px solid var(--border);border-radius:12px;padding:16px;background:#0a0a0a;cursor:grab;transition:border-color .2s,transform .15s;position:relative;min-height:90px;display:flex;flex-direction:column;user-select:none}
+.widget:hover{border-color:var(--dim)}.widget:active{cursor:grabbing;transform:scale(.97)}
+.widget.dragging{opacity:.5}.widget.drag-over{border-color:#888;background:#111}
+.widget-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;margin-bottom:10px;background:#111;border:1px solid var(--border)}
+.widget-name{font-size:12px;font-weight:600;color:#ddd;margin-bottom:2px}
+.widget-desc{font-family:var(--jb);font-size:9px;color:#888}
+.widget-link{position:absolute;inset:0;border-radius:12px;z-index:1}
+.widget-badge{position:absolute;top:8px;right:8px;font-family:var(--jb);font-size:8px;color:#666;background:#111;border:1px solid var(--border);border-radius:4px;padding:1px 5px}
+.widget-palette{display:none;border:1px solid var(--border);border-radius:12px;background:#0a0a0a;padding:16px;margin-bottom:16px}.widget-palette.open{display:block}
+.widget-palette-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+.widget-palette-item{border:1px solid var(--border);border-radius:8px;padding:10px;cursor:pointer;font-size:11px;color:#aaa}.widget-palette-item:hover{border-color:#555;color:#ddd}
+.widget-edit-mode .widget{animation:wiggle .3s ease-in-out infinite alternate}
+.widget-edit-mode .widget:nth-child(2n){animation-delay:.15s}
+@keyframes wiggle{0%{transform:rotate(-.5deg)}100%{transform:rotate(.5deg)}}
+.widget-remove{display:none;position:absolute;top:-6px;right:-6px;width:18px;height:18px;border-radius:50%;background:#333;border:1px solid #555;color:#aaa;font-size:11px;cursor:pointer;z-index:2;align-items:center;justify-content:center;line-height:1}
+.widget-edit-mode .widget-remove{display:flex}
+@media(min-width:600px){.container{padding:40px 24px 0;max-width:880px}.grid-3{grid-template-columns:repeat(3,1fr)}.grid-4{grid-template-columns:repeat(4,1fr)}.widget-grid{grid-template-columns:repeat(3,1fr)}.widget-palette-grid{grid-template-columns:repeat(3,1fr)}.domain-grid{grid-template-columns:repeat(2,1fr)}.title{font-size:28px}}
+@media(min-width:900px){.container{padding:48px 24px 0}.grid-2{grid-template-columns:repeat(2,1fr)}.widget-grid{grid-template-columns:repeat(4,1fr)}.widget-palette-grid{grid-template-columns:repeat(4,1fr)}.domain-grid{grid-template-columns:repeat(3,1fr)}.title{font-size:32px}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
 </head>
 <body>
 <div class="grad-bar"></div>
-<nav><div class="nav-logo"><div class="nav-mark"></div> BlackRoad Identity</div><div class="nav-links"><a href="https://blackroad.io">Home</a><a href="https://chat.blackroad.io">Chat</a><a href="https://search.blackroad.io">Search</a></div></nav>
-<div class="container"><div id="aV"><h1>BlackRoad Identity</h1><p class="sub">Your sovereign digital identity.</p><div class="card" style="max-width:400px;margin:0 auto"><div style="display:flex;margin-bottom:16px;border:1px solid var(--border);border-radius:6px;overflow:hidden"><button class="btn" id="ti" onclick="st('i')" style="flex:1;border-radius:0;background:#111;color:#f5f5f5">Sign In</button><button class="btn" id="tu" onclick="st('u')" style="flex:1;border-radius:0;background:transparent;color:#555">Sign Up</button></div><div id="nf" style="display:none"><input class="input" id="rn" placeholder="Name" style="margin-bottom:8px"></div><input class="input" id="re" placeholder="Email" type="email" style="margin-bottom:8px"><input class="input" id="rp" placeholder="Password" type="password" style="margin-bottom:12px" onkeydown="if(event.key==='Enter')da()"><button class="btn" style="width:100%" onclick="da()">Sign In</button><div id="am" style="font-size:12px;color:#888;text-align:center;margin-top:10px;min-height:16px"></div></div></div><div id="pV" style="display:none"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px"><h1>Profile</h1><button class="btn-outline btn" onclick="lo()">Sign Out</button></div><div class="grid-2"><div class="card"><div class="label">Name</div><div id="pN" style="font-size:18px;font-weight:600">-</div></div><div class="card"><div class="label">Email</div><div id="pE" class="mono">-</div></div><div class="card"><div class="label">Plan</div><div id="pP" style="font-size:18px;font-weight:600;text-transform:capitalize">-</div><a href="https://pay.blackroad.io" style="font-size:12px;color:#f5f5f5;opacity:.4;text-decoration:none">Upgrade</a></div><div class="card"><div class="label">ID</div><div id="pI" class="mono" style="word-break:break-all;font-size:11px">-</div></div></div><div class="card" style="margin-top:16px"><div class="label">JWT</div><pre id="pT" style="font-size:10px;word-break:break-all"></pre><button class="btn-outline btn" style="margin-top:8px" onclick="navigator.clipboard.writeText(document.getElementById('pT').textContent)">Copy</button></div></div></div><script>var m="i";function st(x){m=x;document.getElementById("ti").style.background=x==="i"?"#111":"transparent";document.getElementById("ti").style.color=x==="i"?"#f5f5f5":"#555";document.getElementById("tu").style.background=x==="u"?"#111":"transparent";document.getElementById("tu").style.color=x==="u"?"#f5f5f5":"#555";document.getElementById("nf").style.display=x==="u"?"block":"none"}async function da(){var e=document.getElementById("re").value,p=document.getElementById("rp").value,n=document.getElementById("rn").value;if(!e||!p){document.getElementById("am").textContent="Email and password required";return}var ep=m==="i"?"/api/signin":"/api/signup";var bd=m==="i"?{email:e,password:p}:{email:e,password:p,name:n||e.split("@")[0]};try{var r=await fetch("https://auth.blackroad.io"+ep,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(bd)});var d=await r.json();if(d.error){document.getElementById("am").textContent=d.error;return}if(d.token){localStorage.setItem("br-token",d.token);localStorage.setItem("br-user",JSON.stringify(d.user));sp(d.user,d.token)}}catch(x){document.getElementById("am").textContent="Connection failed"}}function sp(u,t){document.getElementById("aV").style.display="none";document.getElementById("pV").style.display="block";document.getElementById("pN").textContent=u.name||"-";document.getElementById("pE").textContent=u.email||"-";document.getElementById("pP").textContent=u.plan||"operator";document.getElementById("pI").textContent=u.id||"-";document.getElementById("pT").textContent=t}function lo(){localStorage.removeItem("br-token");localStorage.removeItem("br-user");location.reload()}(async function(){var t=localStorage.getItem("br-token");if(!t)return;try{var r=await fetch("https://auth.blackroad.io/api/me",{headers:{Authorization:"Bearer "+t}});if(r.ok){var d=await r.json();sp(d.user||JSON.parse(localStorage.getItem("br-user")||"{}"),t)}}catch(e){}})()</script>
-<footer>&copy; 2026 <a href="https://blackroad.io">BlackRoad OS, Inc.</a></footer>
-<div class="grad-bar-bottom"></div>
-<div style="position:fixed;bottom:0;left:0;right:0;z-index:999;background:#0a0a0a;border-top:1px solid #1a1a1a;padding:8px 0"><div style="display:flex;gap:16px;justify-content:center;padding:0 20px;white-space:nowrap"><a href="https://blackroad.io" style="font-family:var(--jb);font-size:.6rem;color:#555;text-decoration:none">Home</a><a href="https://search.blackroad.io" style="font-family:var(--jb);font-size:.6rem;color:#555;text-decoration:none">Search</a><a href="https://chat.blackroad.io" style="font-family:var(--jb);font-size:.6rem;color:#555;text-decoration:none">Chat</a><a href="https://pay.blackroad.io" style="font-family:var(--jb);font-size:.6rem;color:#555;text-decoration:none">Pay</a><a href="https://github.com/BlackRoad-OS-Inc" style="font-family:var(--jb);font-size:.6rem;color:#555;text-decoration:none">GitHub</a></div></div><div style="height:36px"></div>
-</body></html>
+<div class="container">
+
+  <div class="section">
+    <div class="mark"></div>
+    <div class="title">BlackRoad Identity</div>
+    <div class="subtitle">Your sovereign profile</div>
+  </div>
+
+  <!-- Profile -->
+  <div class="section">
+    <div class="section-label">Profile</div>
+    <div class="card no-click">
+      <div class="profile-avatar">AA</div>
+      <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:2px">Alexa Louise Amundson</div>
+      <div style="font-family:var(--jb);font-size:11px;color:#aaa;margin-bottom:16px">Founder & CEO  ·  BlackRoad OS, Inc.</div>
+      <div class="row"><span class="row-key">Email</span><span class="row-val">alexa@blackroad.io</span></div>
+      <div class="row"><span class="row-key">GitHub</span><span class="row-val">blackboxprogramming</span></div>
+      <div class="row"><span class="row-key">Entity</span><span class="row-val">Delaware C-Corp</span></div>
+      <div class="row"><span class="row-key">Incorporated</span><span class="row-val">Nov 17, 2025</span></div>
+      <div class="row"><span class="row-key">Nodes Owned</span><span class="row-val">7</span></div>
+      <div class="row"><span class="row-key">Domains</span><span class="row-val">19</span></div>
+      <div class="row"><span class="row-key">GitHub Orgs</span><span class="row-val">18</span></div>
+    </div>
+  </div>
+
+  <!-- Devices -->
+  <div class="section">
+    <div class="section-label">Devices</div>
+    <div class="card no-click" id="devices"></div>
+  </div>
+
+  <!-- Connected Accounts -->
+  <div class="section">
+    <div class="section-label">Connected</div>
+    <div class="card" onclick="window.open('https://github.com/blackboxprogramming','_blank')">
+      <div style="display:flex;align-items:center;gap:8px"><span class="dot dot-live"></span><span style="font-size:13px;font-weight:500;color:#ddd">GitHub</span><span style="font-family:var(--jb);font-size:10px;color:#888">blackboxprogramming</span><span style="margin-left:auto;color:#555">→</span></div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <span class="card-arrow">›</span>
+      <div style="display:flex;align-items:center;gap:8px"><span class="dot dot-live"></span><span style="font-size:13px;font-weight:500;color:#ddd">Gitea</span><span style="font-family:var(--jb);font-size:10px;color:#888">self-hosted on Octavia</span></div>
+      <div class="card-detail">Gitea running on Octavia :3100. Primary Git host — GitHub is downstream mirror. 239 repos mirrored via sync-downstream.</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <span class="card-arrow">›</span>
+      <div style="display:flex;align-items:center;gap:8px"><span class="dot dot-live"></span><span style="font-size:13px;font-weight:500;color:#ddd">Stripe</span><span style="font-family:var(--jb);font-size:10px;color:#888">BlackRoad OS, Inc.</span></div>
+      <div class="card-detail">Stripe Atlas formation. Payment processing for BlackRoad products. Only external financial dependency.</div>
+    </div>
+  </div>
+
+  <!-- Domains -->
+  <div class="section">
+    <div class="section-label">Domains Owned</div>
+    <div class="domain-grid" id="domains"></div>
+  </div>
+
+  <!-- Widget Grid -->
+  <div class="section">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+      <div class="section-label" style="margin-bottom:0">Apps & Tools</div>
+      <button onclick="toggleEditMode()" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-family:var(--jb);font-size:9px;color:#888;cursor:pointer" id="edit-btn">Edit</button>
+    </div>
+    <div class="widget-palette" id="widget-palette"><div style="font-size:12px;color:#aaa;margin-bottom:4px">Add a widget</div><div class="widget-palette-grid" id="palette-grid"></div></div>
+    <div class="widget-grid" id="widget-grid"></div>
+  </div>
+
+  <div class="section" style="text-align:center">
+    <span style="font-size:11px;color:#aaa"><span class="circle-accent pulse"></span>&nbsp; Identity since: <span id="uptime">calculating...</span></span>
+  </div>
+</div>
+<div class="grad-bar" style="margin-top:24px"></div>
+
+<script>
+function toggle(el){el.classList.toggle('open');}
+
+var devices=[
+  {name:'Alice',ip:'.49',role:'Gateway / DNS / DB',user:'blackroad',detail:'Pi 5. Pi-hole, PostgreSQL, Qdrant, Redis, nginx. SSH user: blackroad.'},
+  {name:'Cecilia',ip:'.96',role:'AI Inference',user:'blackroad',detail:'Pi 5. Ollama (16 models), MinIO, Hailo-8. SSH user: blackroad.'},
+  {name:'Octavia',ip:'.101',role:'DevOps / Git',user:'pi',detail:'Pi 5. Gitea, 15 Workers, NATS, Docker. SSH user: pi. octavia user has NOPASSWD sudo on Lucidia.'},
+  {name:'Aria',ip:'.98',role:'Networking',user:'blackroad',detail:'Pi 5. Headscale, Cloudflared, nginx. SSH user: blackroad.'},
+  {name:'Lucidia',ip:'.38',role:'DNS / CI',user:'blackroad',detail:'Pi 5. PowerDNS, GitHub Runners, Ollama, 334 apps. SD degrading. SSH user: blackroad.'},
+  {name:'Gematria',ip:'nyc3',role:'TLS Edge',user:'root',detail:'DO droplet. Caddy (151 domains), PowerDNS ns1, Ollama (6 models).'},
+  {name:'Anastasia',ip:'nyc1',role:'Compute',user:'root',detail:'DO droplet. General compute and edge caching.'},
+  {name:'Alexandria',ip:'.28',role:'Workstation',user:'alexa',detail:'MacBook Pro. Primary development machine. 192.168.4.28.'}
+];
+
+document.getElementById('devices').innerHTML=devices.map(function(d){
+  return '<div class="device-row" onclick="var x=this.nextElementSibling;x.style.display=x.style.display===\'block\'?\'none\':\'block\'">'+
+    '<span class="dot dot-live pulse"></span>'+
+    '<span class="device-name">'+d.name+'</span>'+
+    '<span style="font-family:var(--jb);font-size:10px;color:#666;min-width:36px">'+d.ip+'</span>'+
+    '<span class="device-role">'+d.role+'</span>'+
+    '</div><div class="device-detail">'+d.detail+'</div>';
+}).join('');
+
+var domains=['blackroad.io','blackroad.company','blackroad.me','blackroad.network','blackroad.systems','blackroadai.com','blackroadinc.us','blackroadqi.com','blackroadquantum.com','blackroadquantum.info','blackroadquantum.net','blackroadquantum.shop','blackroadquantum.store','lucidia.earth','lucidia.studio','lucidiaqi.com','roadchain.io','roadcoin.io','blackboxprogramming.io'];
+document.getElementById('domains').innerHTML=domains.map(function(d){
+  return '<a href="https://'+d+'" class="domain-item" target="_blank"><span class="domain-dot"></span>'+d+'</a>';
+}).join('');
+
+// Widget system
+var WIDGET_CATALOG=[{id:'chat',name:'Chat',desc:'RoundTrip',icon:'💬',href:'https://chat.blackroad.io',badge:'Live'},{id:'search',name:'Search',desc:'Search all',icon:'🔍',href:'https://search.blackroad.io',badge:'Live'},{id:'pay',name:'Pay',desc:'Checkout',icon:'💳',href:'https://pay.blackroad.io'},{id:'status',name:'Status',desc:'Fleet health',icon:'📡',href:'https://status.blackroad.io'},{id:'github',name:'GitHub',desc:'Source',icon:'⚡',href:'https://github.com/BlackRoad-OS-Inc'},{id:'ai',name:'AI',desc:'Playground',icon:'🧠',href:'https://blackroadai.com'},{id:'network',name:'Network',desc:'Mesh',icon:'🌐',href:'https://blackroad.network'},{id:'systems',name:'Systems',desc:'Fleet',icon:'🖥',href:'https://blackroad.systems'},{id:'identity',name:'Identity',desc:'Profile',icon:'👤',href:'https://blackroad.me'},{id:'company',name:'Company',desc:'Corporate',icon:'🏛',href:'https://blackroad.company'},{id:'quantum',name:'Quantum',desc:'QI',icon:'⚛',href:'https://blackroadquantum.com'},{id:'lucidia',name:'Lucidia',desc:'Companion',icon:'✧',href:'https://lucidia.earth'},{id:'docs',name:'Docs',desc:'Docs hub',icon:'📄',href:'https://docs.blackroad.io'},{id:'brand',name:'Brand',desc:'Design',icon:'◼',href:'https://brand.blackroad.io'},{id:'hq',name:'HQ',desc:'Pixel office',icon:'🏢',href:'https://hq.blackroad.io'}];
+var STORAGE_KEY='br-widgets-me';
+var DEFAULT_WIDGETS=['chat','search','identity','github','company','pay','status','network'];
+function getActiveWidgets(){try{var s=localStorage.getItem(STORAGE_KEY);if(s)return JSON.parse(s);}catch(e){}return DEFAULT_WIDGETS.slice();}
+function saveActiveWidgets(ids){localStorage.setItem(STORAGE_KEY,JSON.stringify(ids));}
+var editMode=false;
+function toggleEditMode(){editMode=!editMode;document.getElementById('edit-btn').textContent=editMode?'Done':'Edit';document.getElementById('widget-palette').classList.toggle('open',editMode);document.getElementById('widget-grid').classList.toggle('widget-edit-mode',editMode);renderWidgets();renderPalette();}
+function renderWidgets(){var ids=getActiveWidgets();document.getElementById('widget-grid').innerHTML=ids.map(function(id,i){var w=WIDGET_CATALOG.find(function(x){return x.id===id});if(!w)return '';return '<div class="widget" draggable="true" data-id="'+w.id+'" data-index="'+i+'" ondragstart="wDragStart(event)" ondragover="wDragOver(event)" ondrop="wDrop(event)" ondragend="wDragEnd(event)">'+(editMode?'<div class="widget-remove" onclick="removeWidget(\''+w.id+'\')">×</div>':'')+'<div class="widget-icon">'+w.icon+'</div><div class="widget-name">'+w.name+'</div><div class="widget-desc">'+w.desc+'</div>'+(w.badge?'<div class="widget-badge">'+w.badge+'</div>':'')+(!editMode?'<a href="'+w.href+'" target="_blank" class="widget-link"></a>':'')+'</div>';}).join('');}
+function renderPalette(){var ids=getActiveWidgets();var avail=WIDGET_CATALOG.filter(function(w){return ids.indexOf(w.id)===-1});var pg=document.getElementById('palette-grid');if(!avail.length){pg.innerHTML='<div style="font-size:11px;color:#555;padding:8px">All added</div>';return;}pg.innerHTML=avail.map(function(w){return '<div class="widget-palette-item" onclick="addWidget(\''+w.id+'\')">'+w.icon+' '+w.name+'</div>';}).join('');}
+function addWidget(id){var ids=getActiveWidgets();if(ids.indexOf(id)===-1){ids.push(id);saveActiveWidgets(ids);}renderWidgets();renderPalette();}
+function removeWidget(id){var ids=getActiveWidgets().filter(function(x){return x!==id});saveActiveWidgets(ids);renderWidgets();renderPalette();}
+var dragIdx=null;
+function wDragStart(e){dragIdx=+e.target.closest('.widget').dataset.index;e.target.closest('.widget').classList.add('dragging');}
+function wDragOver(e){e.preventDefault();e.target.closest('.widget')?.classList.add('drag-over');}
+function wDrop(e){e.preventDefault();document.querySelectorAll('.widget').forEach(function(x){x.classList.remove('drag-over')});var t=e.target.closest('.widget');if(!t)return;var ti=+t.dataset.index;if(dragIdx===null||dragIdx===ti)return;var ids=getActiveWidgets();var m=ids.splice(dragIdx,1)[0];ids.splice(ti,0,m);saveActiveWidgets(ids);renderWidgets();}
+function wDragEnd(e){dragIdx=null;document.querySelectorAll('.widget').forEach(function(x){x.classList.remove('dragging','drag-over')});}
+renderWidgets();
+
+var founded=new Date('2025-11-17T00:00:00Z');
+function uptime(){var diff=Date.now()-founded;var d=Math.floor(diff/86400000);var h=Math.floor((diff%86400000)/3600000);var m=Math.floor((diff%3600000)/60000);document.getElementById('uptime').textContent=d+'d '+h+'h '+m+'m';}
+uptime();setInterval(uptime,60000);
+</script>
+</body>
+</html>
+<!-- v1774241300 -->
